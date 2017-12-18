@@ -1,9 +1,4 @@
-# ECAutoScrollBanner
-轮播图封装。可以实现自动定时翻页、手动翻页；垂直和水平滚动等。支持纯文本、本地图片、网络图片以及其他view试图。
-
-<html>
-<!--在这里插入内容-->
-    ### [Navigation 导航](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#navigation-%E5%AF%BC%E8%88%AA)
+### [Navigation 导航](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#navigation-%E5%AF%BC%E8%88%AA)
 - [Abstract 概要](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#abstract-%E6%A6%82%E8%A6%81)
     - [简介&特性](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E7%AE%80%E4%BB%8B%E7%89%B9%E6%80%A7)
     - [效果图](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E6%95%88%E6%9E%9C%E5%9B%BE)
@@ -217,6 +212,3 @@ typedef NS_ENUM(NSInteger, ECAutoScrollBannerScrollDirection){
 - https://github.com/EchoZuo
 - Email: zuoqianheng@foxmail.com || QQ:615125175 
 - 简书：[@EchoZuo](http://www.jianshu.com/u/3390ce71084e)
-
-</html>
-
