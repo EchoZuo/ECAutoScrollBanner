@@ -5,7 +5,7 @@
 - [Abstract 概要](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#abstract-%E6%A6%82%E8%A6%81)
     - [简介&特性](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E7%AE%80%E4%BB%8B%E7%89%B9%E6%80%A7)
     - [效果图](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E6%95%88%E6%9E%9C%E5%9B%BE)
-- [Explain 说明]https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#explain-%E8%AF%B4%E6%98%8E)
+- [Explain 说明](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#explain-%E8%AF%B4%E6%98%8E)
     - [实现方式](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F)
     - [详细介绍](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D)
 - [Usage 使用](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#usage-%E4%BD%BF%E7%94%A8)
@@ -108,7 +108,9 @@ typedef NS_ENUM(NSInteger, ECAutoScrollBannerScrollDirection){
     if (self.isAutoPaging) {
         scrollView.panGestureRecognizer.enabled = self.isEnabledPanGestureRecognizer;
     }
+    
     NSInteger page = 0;
+    
     // 是否无限循环
     if (!self.isInfinitePaging) {
         if (self.bannerScrollDirection == ECAutoScrollBannerScrollDirectionHorizontal) {
