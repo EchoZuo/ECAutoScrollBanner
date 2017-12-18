@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, ECAutoScrollBannerScrollDirection){
 ```
 
 ###### 主要的一些计算
-```
+```objective-c
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.isAutoPaging) {
         scrollView.panGestureRecognizer.enabled = self.isEnabledPanGestureRecognizer;
