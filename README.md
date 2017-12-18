@@ -1,3 +1,4 @@
+```
 - (ECAutoScrollBanner *)imageBannerView {
     if (_imageBannerView == nil) {
         _imageBannerView = [ECAutoScrollBanner initLocalImageBannerWithFrame:CGRectMake(0, 30, self.bottomView.frame.size.width, 180) withImageDataSource:self.imageDataArray withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
@@ -17,3 +18,5 @@
     }
     return _urlImageBannerVeiw;
 }
+
+```
