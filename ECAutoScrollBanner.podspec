@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/EchoZuo/ECAutoScrollBanner.git", :tag => "1.0.5" }
   s.requires_arc = true
-  s.sourece_files = "ECAutoScrollBanner/**/*.{h,m}"
+  s.source_files = "ECAutoScrollBanner/*.{h,m}"
+  
 
 end
 
