@@ -161,6 +161,10 @@ typedef NS_ENUM(NSInteger, ECAutoScrollBannerScrollDirection){
 
 ## Usage 使用
 
+### 使用方式
+1. 将ECAutoScrollBanner文件夹直接拖入项目中，导入头文件#import "ECAutoScrollBanner.h"
+2. CocoaPods：pod 'ECAutoScrollBanner'
+
 ### 使用示例
 #### 其实使用起来很便捷很简单。只需要初始化，然后设置相关属性即可。支持先默认初始化，在需要的时候设置其样式和翻页效果翻页时间等。
 #### 纯文本滚动条，适用于广告、新闻资讯等
