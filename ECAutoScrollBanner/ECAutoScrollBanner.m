@@ -110,6 +110,7 @@ typedef NS_ENUM(NSUInteger, BannerType) {
         [self.mainDataSource addObjectsFromArray:viewsDataSouce];
         self.bannerType = BannerType_ViewsBanner;
         self.bannerScrollDirection = bannerScrollDirection;
+        [self configUI];
     }
     return self;
 }
@@ -407,7 +408,7 @@ typedef NS_ENUM(NSUInteger, BannerType) {
             [imageView setImage:self.mainDataSource[indexPath.item]];
         }
     } else {
-        // 本地图片/网络图片展示
+        // 网络图片展示
         UIImageView *imageView = [YYAnimatedImageView new];
         imageView.frame = cell.contentView.bounds;
         imageView.backgroundColor = [UIColor lightGrayColor];
@@ -428,7 +429,6 @@ typedef NS_ENUM(NSUInteger, BannerType) {
         }
     }
 }
-
 
 
 

@@ -18,10 +18,12 @@
 @property (nonatomic, strong) ECAutoScrollBanner *textBannerView;
 @property (nonatomic, strong) ECAutoScrollBanner *imageBannerView;
 @property (nonatomic, strong) ECAutoScrollBanner *urlImageBannerVeiw;
+@property (nonatomic, strong) ECAutoScrollBanner *viewBannerView;
 
 @property (nonatomic, strong) NSMutableArray *textDataArray;
 @property (nonatomic, strong) NSMutableArray *imageDataArray;
 @property (nonatomic, strong) NSMutableArray *imageUrlDataArray;
+@property (nonatomic, strong) NSMutableArray *viewDataArray;
 
 @end
 
@@ -81,6 +83,24 @@
                               @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511958066618&di=9e478cc87951a0a990039fb96c84b846&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fa1%2F91%2Fd%2F44.jpg",
                               nil];
     
+    
+    UIView *testView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
+    testView1.backgroundColor = [UIColor orangeColor];
+    
+    UIView *testView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
+    testView2.backgroundColor = [UIColor yellowColor];
+    
+    UIView *testView3 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
+    testView3.backgroundColor = [UIColor redColor];
+    
+    UIView *testView4 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
+    testView4.backgroundColor = [UIColor blueColor];
+    
+    UIView *testView5 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
+    testView5.backgroundColor = [UIColor brownColor];
+    
+    self.viewDataArray = [[NSMutableArray alloc] initWithObjects:testView1, testView2, testView3, testView4, testView5, nil];
+    
 }
 
 
@@ -94,6 +114,9 @@
     [self.topView addSubview:self.textBannerView];
     [self.bottomView addSubview:self.imageBannerView];
     [self.bottomView addSubview:self.urlImageBannerVeiw];
+    [self.bottomView addSubview:self.viewBannerView];
+    
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 50 + self.topView.frame.size.height + 10 + 30 + self.imageBannerView.frame.size.height + 20 + self.urlImageBannerVeiw.frame.size.height + 20 + self.viewBannerView.frame.size.height + 20);
 }
 
 - (UIScrollView *)scrollView {
@@ -104,7 +127,6 @@
         _scrollView.scrollsToTop = YES;
         [_scrollView addSubview:self.topView];
         [_scrollView addSubview:self.bottomView];
-        _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     }
     return _scrollView;
 }
@@ -142,7 +164,7 @@
 
 - (ECAutoScrollBanner *)imageBannerView {
     if (_imageBannerView == nil) {
-        _imageBannerView = [ECAutoScrollBanner initLocalImageBannerWithFrame:CGRectMake(0, 30, self.bottomView.frame.size.width, 180) withImageDataSource:self.imageDataArray withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
+        _imageBannerView = [ECAutoScrollBanner initLocalImageBannerWithFrame:CGRectMake(0, 20, self.bottomView.frame.size.width, 180) withImageDataSource:self.imageDataArray withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
         _imageBannerView.isAutoPaging = NO;
     }
     return _imageBannerView;
@@ -150,14 +172,22 @@
 
 - (ECAutoScrollBanner *)urlImageBannerVeiw {
     if (_urlImageBannerVeiw == nil) {
-        UIImageView *placehodelImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 + 50 + 10 + 180 + 10, self.view.frame.size.width, 180)];
+        UIImageView *placehodelImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
         placehodelImage.backgroundColor = [UIColor lightGrayColor];
-        _urlImageBannerVeiw = [ECAutoScrollBanner initOnlineImageBannerWithFrame:CGRectMake(0, 50 + 50 + 10 + 180 + 10, self.view.frame.size.width, 180) withImageUrlDataSource:self.imageUrlDataArray withPlaceholderImage:placehodelImage.image withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
+        _urlImageBannerVeiw = [ECAutoScrollBanner initOnlineImageBannerWithFrame:CGRectMake(0, 20 + 180 + 20, self.view.frame.size.width, 180) withImageUrlDataSource:self.imageUrlDataArray withPlaceholderImage:placehodelImage.image withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
         _urlImageBannerVeiw.isAutoPaging = YES;
         _urlImageBannerVeiw.isEnabledPanGestureRecognizer = YES;
         _urlImageBannerVeiw.isInfinitePaging = YES;
     }
     return _urlImageBannerVeiw;
+}
+
+- (ECAutoScrollBanner *)viewBannerView {
+    if (_viewBannerView == nil) {
+        _viewBannerView = [[ECAutoScrollBanner alloc] initViewBannerWithFrame:CGRectMake(0, 20 + 180 + 20 + 180 + 20, self.view.frame.size.width, 180) withViewsDataSouce:self.viewDataArray withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
+        _viewBannerView.isAutoPaging = NO;
+    }
+    return _viewBannerView;
 }
 
 
