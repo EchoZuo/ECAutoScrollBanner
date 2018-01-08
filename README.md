@@ -2,6 +2,10 @@
 # ECAutoScrollBanner
 轮播图封装。可以实现自动定时翻页、手动翻页；垂直和水平滚动等。支持纯文本、本地图片、网络图片以及其他view试图。
 
+#### bug fix：
+1. 创建view试图类的轮播图优化修复。
+
+
 ### [Navigation 导航](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#navigation-%E5%AF%BC%E8%88%AA)
 - [Abstract 概要](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#abstract-%E6%A6%82%E8%A6%81)
     - [简介&特性](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#%E7%AE%80%E4%BB%8B%E7%89%B9%E6%80%A7)
