@@ -3,7 +3,7 @@
 轮播图封装。可以实现自动定时翻页、手动翻页；垂直和水平滚动等。支持纯文本、本地图片、网络图片以及其他view试图。
 
 #### bug fix：
-1. 创建view试图类的轮播图优化修复。
+1. 创建view试图类的轮播图优化修复。（注意：view视图类的轮播中，view的坐标是相对于cell.contentView的坐标，是contentView的子视图）
 
 
 ### [Navigation 导航](https://github.com/EchoZuo/ECAutoScrollBanner/blob/master/README.md#navigation-%E5%AF%BC%E8%88%AA)
@@ -217,6 +217,18 @@ typedef NS_ENUM(NSInteger, ECAutoScrollBannerScrollDirection){
         _urlImageBannerVeiw.isInfinitePaging = YES;
     }
     return _urlImageBannerVeiw;
+}
+```
+
+#### 手动翻页的view视图轮播
+###### （注意：view视图类的轮播中，view的坐标是相对于cell.contentView的坐标，是contentView的子视图）
+```Objective-C
+- (ECAutoScrollBanner *)viewBannerView {
+    if (_viewBannerView == nil) {
+        _viewBannerView = [[ECAutoScrollBanner alloc] initViewBannerWithFrame:CGRectMake(0, 20 + 180 + 20 + 180 + 20, self.view.frame.size.width, 180) withViewsDataSouce:self.viewDataArray withBannerScrollDirection:ECAutoScrollBannerScrollDirectionHorizontal];
+        _viewBannerView.isAutoPaging = NO;
+    }
+    return _viewBannerView;
 }
 ```
 
